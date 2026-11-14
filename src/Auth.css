@@ -1,0 +1,185 @@
+/* Contenedores de Login y Registro */
+.login-container,
+.registro-container {
+  width: 90%;
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* Títulos */
+.login-container h1,
+.registro-container h1 {
+  text-align: center;
+  color: #1e3a5f;
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+/* Descripciones */
+.registro-container > p:first-of-type {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* Formularios */
+.login-container form,
+.registro-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-container form div,
+.registro-container form div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Etiquetas */
+.login-container label,
+.registro-container label {
+  color: #334155;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Campos */
+.login-container input,
+.registro-container input,
+.registro-container select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.login-container input:focus,
+.registro-container input:focus,
+.registro-container select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Botones */
+.login-container button,
+.registro-container form button {
+  width: 100%;
+  padding: 13px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover,
+.registro-container form button:hover {
+  background-color: #1d4ed8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Enlaces y textos inferiores */
+.login-container > p,
+.registro-container > p {
+  text-align: center;
+  margin-top: 22px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.login-container a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Botón para regresar al Login */
+.registro-container > p button {
+  display: inline;
+  width: auto;
+  padding: 0;
+  background: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.registro-container > p button:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+/* Mensajes */
+.mensaje-exito {
+  color: #15803d !important;
+  background-color: #dcfce7;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.mensaje-error {
+  color: #b91c1c !important;
+  background-color: #fee2e2;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 480px) {
+  .login-container,
+  .registro-container {
+    margin: 30px auto;
+    padding: 25px 20px;
+  }
+
+  .login-container h1,
+  .registro-container h1 {
+    font-size: 24px;
+  }
+}
+
+
+/* Fondo general */
+body {
+  background-color: #eff6ff;
+}
+
+/* Alinear etiquetas a la izquierda */
+.login-container label,
+.registro-container label {
+  text-align: left;
+}
+
+/* Mejorar botón inferior de Registro */
+.registro-container > p button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Centrar verticalmente la tarjeta */
+.login-container,
+.registro-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
