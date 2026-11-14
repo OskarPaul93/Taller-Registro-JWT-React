@@ -1,111 +1,222 @@
+
+/* CONFIGURACIÓN GENERAL */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #1e293b;
+  background-color: #eff6ff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
+* {
   margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #eff6ff;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+button,
+input,
+select {
+  font-family: inherit;
 }
 
-code {
+/* CONTENEDORES DE LOGIN Y REGISTRO */
+.login-container,
+.registro-container {
+  width: 90%;
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* TÍTULOS */
+.login-container h1,
+.registro-container h1 {
+  text-align: center;
+  color: #1e3a5f;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* DESCRIPCIÓN */
+.registro-container > p:first-of-type {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* FORMULARIOS */
+.login-container form,
+.registro-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-container form div,
+.registro-container form div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* ETIQUETAS */
+.login-container label,
+.registro-container label {
+  color: #334155;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* CAMPOS DE ENTRADA */
+.login-container input,
+.registro-container input,
+.registro-container select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
   font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  outline: none;
+  background-color: #ffffff;
+}
+
+.login-container input:focus,
+.registro-container input:focus,
+.registro-container select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* BOTONES PRINCIPALES */
+.login-container form button,
+.registro-container form button {
+  width: 100%;
+  padding: 13px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container form button:hover,
+.registro-container form button:hover {
+  background-color: #1d4ed8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* TEXTOS INFERIORES */
+.login-container > p,
+.registro-container > p {
+  text-align: center;
+  margin-top: 22px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ENLACES */
+.login-container a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* BOTÓN PARA VOLVER AL LOGIN */
+.registro-container > p button {
+  display: inline;
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.registro-container > p button:hover {
+  text-decoration: underline;
+}
+
+/* MENSAJES */
+.mensaje-exito {
+  color: #15803d !important;
+  background-color: #dcfce7;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.mensaje-error {
+  color: #b91c1c !important;
+  background-color: #fee2e2;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* ADAPTABILIDAD PARA TABLETS */
+@media (max-width: 768px) {
+  .login-container,
+  .registro-container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+  }
+}
+
+/* ADAPTABILIDAD PARA CELULARES */
+@media (max-width: 480px) {
+  .login-container,
+  .registro-container {
+    width: 92%;
+    margin: 25px auto;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  .login-container h1,
+  .registro-container h1 {
+    font-size: 24px;
+  }
+
+  .login-container input,
+  .registro-container input,
+  .registro-container select {
+    padding: 11px;
+    font-size: 14px;
+  }
+
+  .login-container form button,
+  .registro-container form button {
+    padding: 12px;
+    font-size: 15px;
+  }
 }
